@@ -21,6 +21,7 @@ public class KindleWeb {
 		d.manage().window().maximize();
 		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
+		// Explicitly wait
 		WebDriverWait wait = new WebDriverWait(d, Duration.ofSeconds(60));
 
 		// Login Page
