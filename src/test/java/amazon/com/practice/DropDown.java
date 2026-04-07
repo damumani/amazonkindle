@@ -34,10 +34,17 @@ public class DropDown {
 		act.moveToElement(DemoSites).moveToElement(PracticeAutomation).moveToElement(dropDownPage).click().perform();
 
 		// DropDown 1
-		WebElement chooseCity1 = d.findElement(By.xpath("//span[@id='select2-simpleDropdown-container']"));	//("//*[text()='Choose A City:']"));
-		chooseCity1.click();
+		WebElement chooseCity = d.findElement(By.xpath("//span[@id='select2-simpleDropdown-container']"));	//("//*[text()='Choose A City:']"));
+		chooseCity.click();
 						
-		WebElement chooseCity = d.findElement(By.xpath("(//*[@class='select2-hidden-accessible'])[1]"));
+		d.findElement(By.xpath("(//*[text()='New York City'])[2]")).click();
+		
+		Thread.sleep(3000);
+		
+		chooseCity.click();
+		d.findElement(By.xpath("(//*[text()='Mumbai'])[2]")).click();
+		
+//		WebElement chooseCity = d.findElement(By.xpath("(//*[@class='select2-hidden-accessible'])[1]"));
 		Select s = new Select(chooseCity);
 		Thread.sleep(3000);
 //		ArrayList<String> cities = new ArrayList<>();
