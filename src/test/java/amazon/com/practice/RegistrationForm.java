@@ -21,15 +21,18 @@ public class RegistrationForm {
 		String Home_button = d.findElement(By.xpath("//div[@class='collapse navbar-collapse pull-right']//a[normalize-space()='Home']")).getText();
 		System.out.println(Home_button);	
 		
-//		Actions a = new Actions(d);
 //		//Demo site hover 
-//		a.moveToElement(d.findElement(By.className("menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6372"))).build().perform();
+		// Action class initiate
+				Actions a = new Actions(d);
+				
+		// Demo Site
+		WebElement DemoSites = d.findElement(By.xpath("(//*[text()='Demo Sites'])[2]"));
+		// Menu: Practice Automation
+		WebElement PracticeAutomation = d.findElement(By.xpath("(//a[text()='Practice Automation'])[2]"));
 		
-		WebElement menu = d.findElement(By.className("menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6372"));
-
-			Actions a = new Actions(d);
-			a.moveToElement(menu).perform();
-		
+		// Perform the action from Home page
+		a.moveToElement(DemoSites).click().perform(); //DemoSite
+		a.moveToElement(PracticeAutomation).click().perform();	//	PracticeAutomation
 		
 	}
 
